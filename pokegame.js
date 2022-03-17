@@ -10,7 +10,6 @@ let positions = {
     cima:119, baixo:115,
     esquerda:97, direita:100
 }
-
 let bush = [{x: 0, y:70,w: 400, h:250},
             {x: 500, y:70,w: 400, h:250}
 ]
