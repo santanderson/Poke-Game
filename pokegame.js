@@ -69,8 +69,17 @@ function colide(){
 }
 
 function battle(){
+    let pokemon;
     rng = '';
-    window.alert('Prepare for battle!');
+    let p = Math.round(Math.random() * (151 - 1) +5);
+
+    fetch(`https://pokeapi.co/api/v2/pokemon-species/${p}/`, {method: 'GET'})
+    .then(res => {
+        if(res.status !== 200) window.alert('Error 404!');
+        return res.json();})
+    .then(resJson => {pokemon = resJson;
+        window.alert(`A wild ${pokemon.name[0].toUpperCase() + pokemon.name.slice(1)} appeared`);
+    });
 }
 
 window.addEventListener('keypress', keypressPlayer);
